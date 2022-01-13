@@ -9,14 +9,13 @@ public class Solution {
 
     public void collectAndWrite() throws IOException {
         // write your code here
-        File directory = new File("D:\\Java SkillFactory\\Workbook\\files");
-        File elderFile = new File("D:\\Java SkillFactory\\Workbook\\src\\elderFile.txt");
+        File directory = new File("files");
+        File elderFile = new File("src\\elderFile.txt");
         FileWriter fw = new FileWriter(elderFile, true);
         BufferedWriter bw = new BufferedWriter(fw);
         listFilesFolder(directory);
         for (int i = 0; i < name.size(); i++){
             File file = new File(directory.getPath() + "\\" + name.get(i));
-            System.out.println(Files.readString(Paths.get(file.toURI())));
             bw.write(Files.readString(Paths.get(file.toURI())) + "\n");
         }
         bw.flush();
@@ -32,9 +31,6 @@ public class Solution {
             }
         }
         }
-
-
-
     }
 
 
